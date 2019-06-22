@@ -37,8 +37,9 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: StreamBuilder(
-        stream: _bloc.counterStateOuput,
+        stream: _bloc.counter,
         builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
+
           return Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -47,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   'You have pushed the button this many times:',
                 ),
                 Text(
-                  '${snapshot.data}',
+                  '${snapshot.data == null ? 0 : snapshot.data}',
                   style: Theme.of(context).textTheme.display1,
                 ),
               ],

@@ -13,7 +13,7 @@ class CounterBloc {
   StreamSink<int> get _counterStateInput => _counterStateController.sink;
 
   // This is the stream that gets outputted to the view, it get its value from the sink above
-  Stream<int> get counterStateOuput => _counterStateController.stream;
+  Stream<int> get counter => _counterStateController.stream;
 
   // This is the sink where events get passed in from the view, it passes this down to the event controller's stream
   Sink<CounterEvent> get counterEventInput => _counterEventController.sink;
